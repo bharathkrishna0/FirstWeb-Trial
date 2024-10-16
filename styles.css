@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: auto;
+    height: 100%;
+    background-color: #000010;
+    font-family: 'Afacad Flux';
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background-color: #f8f9fa;
+    z-index: 0;
+    height: 70px;
+}
+
+.logo img {
+    margin-left: 20px;
+    position: relative;
+    margin-top: 5px;
+    /* max-width: 120px; */
+    height: auto;
+    width: 120px;
+    z-index: 0;
+    transition: max-width 0.3s ease, transform 0.3s ease; /* Added transition */
+}
+
+.logo img:hover {
+    z-index: 1;
+    max-width: 300px;
+    transform: scale(1.3); /* Added scale for a pop-out effect */
+    height: auto;
+}
+
+.heading h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.refresh button {
+    margin-right: 25px;
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Afacad Flux';    
+}
+
+.refresh button:hover {
+    background-color: rgb(39, 39, 39);
+}
+
+.bottom{
+  position: relative;  
+  color: white;
+  z-index: 0;
+  align-items: center;
+}
+
+.api1box, .api2box, .api3box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-style: solid;
+    border-color: #f8f9fa;
+    align-items: center;
+    justify-content: center;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* padding: 50px; */
+}
+
+/* first method  */
+
+/* h1 span {
+    position: relative;
+    display: inline;
+    visibility: visible;
+}
+
+
+h1:hover span:nth-child(even) {
+
+    animation: text 1s 1; 
+}
+
+@keyframes text{
+    0%{   
+        visibility: hidden;
+        letter-spacing: -0.35em;   
+    }
+    100%{
+        letter-spacing: 0;
+        visibility: visible;
+    }
+} */
+
+/* second method */
+
+h1{
+  width: 100%;
+}
+
+h1 span:nth-child(even) {
+  color: black;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom:20px;
+  animation: text 3s 1;
+}
+
+@keyframes text{
+  0%{
+    color: white;
+    font-weight: 100;
+  }
+  30%{
+    font-weight: 350;
+  }
+  85%{
+    letter-spacing: 5px;
+    font-weight: 500;
+  }
+}
+
+.mainButton {
+  margin: 10px;
+  position: relative;
+  background: #000010;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  transition: 0.2s;
+}
+  
+.mainButton:hover {
+  letter-spacing: 0.2rem;
+  padding: 1.1rem 3.1rem;
+  background: var(--clr);
+  color: var(--clr);
+  /* box-shadow: 0 0 35px var(--clr); */
+  animation: box 3s infinite;
+  cursor: pointer;
+}
+
+.mainButton::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #000010;
+}
+
+.mainButton span {
+  position: relative;
+  z-index: 1;
+}
+.mainButton i {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.mainButton i::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+.mainButton:hover i::before {
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+
+.mainButton i::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--clr);
+  background: #272822;
+  transition: 0.2s;
+}
+
+.mainButton:hover i::after {
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes box {
+  0% {
+    box-shadow: #27272c;
+  }
+  50% {
+    box-shadow: 0 0 25px var(--clr);
+  }
+  100% {
+    box-shadow: #27272c;
+  }
+}
+
+.rotationHolder {
+  position: fixed;
+  right: 110px; 
+  top: 530px;   
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+
+.rotation{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  /* background-color: #ccc; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.newLogo{
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: url(assets/TinkerHub_MEC\ Light.png);
+  background-size: 180px;
+  margin-left: -38px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+}
+
+.logoText{
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-weight: 700;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation:rotateTest 10s linear infinite;
+}
+
+@keyframes rotateTest {
+  0%{
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+.logoText span{
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 100px;
+}
+
+
+
